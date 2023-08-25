@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<XMLDB PATH="blocks/orgao/db" VERSION="20210818" COMMENT="XMLDB file for Moodle blocks/orgao"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../../../lib/xmldb/xmldb.xsd"
+>
+  <TABLES>
+    <TABLE NAME="blocks_orgao_franchised" COMMENT="Table containing information for each orgao">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="18" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="orgao" TYPE="text" NOTNULL="true" SEQUENCE="false" COMMENT="franchised orgao"/>
+	<FIELD NAME="responsable" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="responsable orgaos"/>
+	<FIELD NAME="servidor" TYPE="int" LENGTH="4" NOTNULL="false" COMMENT="servidor 1, nao servidor 0"/>                     
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>        
+      </KEYS>
+    </TABLE>
+  </TABLES>
+</XMLDB>

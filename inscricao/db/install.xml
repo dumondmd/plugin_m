@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<XMLDB PATH="blocks/inscricao/db" VERSION="20210818" COMMENT="XMLDB file for Moodle blocks/inscricao"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../../../lib/xmldb/xmldb.xsd"
+>
+  <TABLES>
+    <TABLE NAME="blocks_inscricao" COMMENT="Tabela que gerencia a inscricao" NEXT="blocks_inscricao_usuario">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="identificador_edital" TYPE="int" LENGTH="10" NOTNULL="false" SEQUENCE="false" COMMENT="Numero edital"/>
+        <FIELD NAME="identificador_aluno" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="Id aluno"/>
+        <FIELD NAME="situacao_inscricao" TYPE="text"  NOTNULL="false" SEQUENCE="false" COMMENT="Situacao inscricao"/>
+        <FIELD NAME="motivo_indeferimento" TYPE="text"  NOTNULL="false" SEQUENCE="false" COMMENT="Motivo indeferimento"/>
+        <FIELD NAME="data_analise" TYPE="int" LENGTH="10" NOTNULL="false" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="responsavel_analise" TYPE="char" LENGTH="255" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="situacao_recurso" TYPE="text"  NOTNULL="false" SEQUENCE="false" COMMENT="Situacao Recurso"/>
+        <FIELD NAME="motivo_indeferimento_recurso" TYPE="text"  NOTNULL="false" SEQUENCE="false" COMMENT="Situacao Indeferimento Recurso"/>
+        <FIELD NAME="link_upload_recurso" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="Situacao Recurso Upload"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+      </KEYS>
+    </TABLE>
+
+    <TABLE NAME="blocks_inscricao_usuario" COMMENT="Dados de usuario para cada curso" PREVIOUS="blocks_inscricao">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="id_curso" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="id_usuario" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false"/>
+        
+        <FIELD NAME="endereco_cep" TYPE="char" LENGTH="255" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="endereco_numero" TYPE="char" LENGTH="255" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="endereco_quadra" TYPE="char" LENGTH="255" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="endereco_lote" TYPE="char" LENGTH="255" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="endereco_cidade" TYPE="char" LENGTH="255" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="endereco_complemento" TYPE="char" LENGTH="255" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="endereco_bairro" TYPE="char" LENGTH="255" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="endereco_logadouro" TYPE="char" LENGTH="255" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="endereco_estado_uf" TYPE="char" LENGTH="255" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="endereco_link_upload" TYPE="char" LENGTH="255" NOTNULL="false" SEQUENCE="false"/>
+        
+        <FIELD NAME="contato_telefone" TYPE="char" LENGTH="20" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="contato_whatsapp" TYPE="char" LENGTH="20" NOTNULL="true" SEQUENCE="false"/>
+
+        <FIELD NAME="lotacao_nucleo" TYPE="char" LENGTH="255" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="lotacao_cargo" TYPE="char" LENGTH="255" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="lotacao_link_autori" TYPE="char" LENGTH="255" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="lotacao_data_inicio" TYPE="char" LENGTH="20" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="lotacao_data_fim" TYPE="char" LENGTH="20" NOTNULL="false" SEQUENCE="false"/>
+
+        <FIELD NAME="cota_pretendida" TYPE="char" LENGTH="255" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="cota_link_autodeclaracao" TYPE="char" LENGTH="255" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="cota_link_laudo_medico" TYPE="char" LENGTH="255" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="cota_link_declaracao" TYPE="char" LENGTH="255" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="cota_link_curriculo" TYPE="char" LENGTH="255" NOTNULL="false" SEQUENCE="false"/>        
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id" />
+      </KEYS>
+    </TABLE>
+  </TABLES>
+</XMLDB>

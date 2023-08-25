@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<XMLDB PATH="blocks/periodo/db" VERSION="20221101"
+       COMMENT="XMLDB file for Moodle blocks/periodo" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../../../lib/xmldb/xmldb.xsd">
+    <TABLES>
+        <TABLE NAME="blocks_periodo_curso" COMMENT="Periodo de inscricao" NEXT="blocks_periodo_recurso">
+            <FIELDS>
+              <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+              <FIELD NAME="id_curso" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false"/>
+              <FIELD NAME="tipo_concurso" TYPE="char" LENGTH="250" NOTNULL="true" SEQUENCE="false"/>
+              <FIELD NAME="data_inicio" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+              <FIELD NAME="data_fim" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+            </FIELDS>
+            <KEYS>
+                <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+            </KEYS>
+        </TABLE>
+                
+        <TABLE NAME="blocks_periodo_recurso" COMMENT="Periodo recurso de inscricao"
+               PREVIOUS="blocks_periodo_concurso">
+            <FIELDS>
+              <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+              <FIELD NAME="id_curso" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false"/>
+              <FIELD NAME="data_inicio" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+              <FIELD NAME="data_fim" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+            </FIELDS>
+            <KEYS>
+                <KEY NAME="primary" TYPE="primary" FIELDS="id" />
+            </KEYS>
+        </TABLE>
+    </TABLES>
+</XMLDB>
